@@ -29,7 +29,7 @@ This phase establishes the Active Directory environment that will support all fu
 ---
 
 ## OU Structure
-
+```
 Corp
 ├── Users
 │ ├── HR
@@ -40,7 +40,7 @@ Corp
 ├── Groups
 ├── Servers
 └── Workstations
-
+```
 ---
 
 ## Users Created
