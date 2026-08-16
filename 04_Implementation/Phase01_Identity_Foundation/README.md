@@ -19,7 +19,7 @@ This phase establishes the Active Directory environment that will support all fu
 ## Environment
 
 | Component | Value |
-|------------|------------|
+|-----------|------------|
 | Domain Name | corp.apexfg.local |
 | Domain Controller | DC01 |
 | Client Workstation | CLIENT-01 |
@@ -32,11 +32,11 @@ This phase establishes the Active Directory environment that will support all fu
 ```
 Corp
 ├── Users
-│ ├── HR
-│ ├── Finance
-│ ├── IT
-│ ├── Sales
-│ └── Executives
+│  ├── HR
+│  ├── Finance
+│  ├── IT
+│  ├── Sales
+│  └── Executives
 ├── Groups
 ├── Servers
 └── Workstations
@@ -57,6 +57,9 @@ Corp
 - Michael Brown
 - Lisa Wilson
 
+### Sales
+- David Miller
+
 ### Executives
 - Robert Taylor
 
@@ -70,6 +73,7 @@ Corp
 - GG_Finance_Manager
 - GG_IT_Admin
 - GG_Executive
+- GG_Sales_Employee
 
 ---
 
