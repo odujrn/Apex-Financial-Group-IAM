@@ -24,7 +24,7 @@ This repository treats each phase as a small security engagement:
 | Phase | Capability | Status |
 |---|---|---|
 | 1 | Active Directory identity foundation | **Completed** |
-| 2 | RBAC and departmental file access | **Implemented — validation refinement in progress** |
+| 2 | RBAC and departmental file access | **Completed** |
 | 3 | Joiner, mover, and leaver automation | Planned |
 | 4 | Authentication and Group Policy hardening | Planned |
 | 5 | Privileged-access management | Planned |
@@ -61,7 +61,9 @@ Phase 1 created the domain, department-based organizational units, eight represe
 
 See [Phase 1 — Identity Foundation](implementation/phase-01-identity-foundation/README.md).
 
-Phase 2 added a departmental file share, Group Policy drive mapping, security filtering, and access tests for representative HR and Finance identities. The available evidence proves drive mapping, HR access for John Smith, root-share denial, and cross-department denial for Alex Williams. One Finance test was captured through the server's local path, so it must be repeated from the domain client before Phase 2 is marked complete.
+Phase 2 implemented a departmental file share, a security-filtered Group Policy drive mapping, and positive and negative access testing. The `Sales_Drive_Mapping` GPO maps `\\DC01\SalesData` to drive `S:` for members of `GG_Sales_Employee`. Validation also confirmed that Alex Williams, a member of `GG_Finance_Employee`, could create a file in the Finance folder through the network path but was denied access to the HR folder.
+
+During validation, an existing `S:` mapping initially appeared in Alex's session. After the mapping was deleted and Group Policy was refreshed, it did not return. This confirmed that it was a persistent connection rather than a GPO assignment. The final results demonstrate group-based authorization, least privilege, and effective cross-department access restrictions.
 
 See [Phase 2 — RBAC and File Access](implementation/phase-02-rbac-file-access/README.md).
 
